@@ -1,0 +1,80 @@
+@use '../variables' as v;
+
+.searchMobile {
+  position: sticky;
+  top: 8dvh;
+  z-index: 1000;
+  
+  display: flex;
+  flex-direction: column;
+
+  background: v.$white;
+}
+
+/* Estilo de las celdas Mobile en listMobile */
+.container-grid { 
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  align-content: flex-start;
+  
+  margin-bottom: 5dvh;
+
+  .cardMobile {
+    &:first-child,
+    &:nth-child(5n+1) {
+      border-left: 1px solid v.$borderCardMobile;
+    }
+    
+    &:nth-last-child(-n + 5) {
+      border-top: none;
+    }
+
+    &:nth-child(n+6) {
+      border-top: none;
+    }    
+  }
+
+}
+
+/* -------- Mobile -------- */
+@media (max-width: 480px) {
+  
+  /* -------- Bordes en ListMobile cardMobile -------- */
+  .container-grid { 
+    .cardMobile {
+      border-left: 1px solid v.$borderCardMobile;
+
+      
+      &:nth-child(n+2) {
+        border-top: none;
+      }
+    }
+  }
+
+}
+
+/* -------- Tablet -------- */
+@media (min-width: 481px) and (max-width: 1024px) {
+  
+  /* -------- Bordes en ListMobile cardMobile -------- */
+  .container-grid { 
+    .cardMobile {
+      &:first-child,
+      &:nth-child(2n+1) {
+        border-left: 1px solid v.$borderCardMobile;
+      }      
+
+      &:nth-child(n+3) {
+        border-top: none;
+      }
+    }
+  }
+
+}
+
+/* -------- Desktop -------- */
+@media (min-width: 1025px) {
+  
+}

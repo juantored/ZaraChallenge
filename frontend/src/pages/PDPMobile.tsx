@@ -6,6 +6,7 @@ import Icon from "../components/Icon";
 import SpecificationMobile from "../components/PDPMobile/SpecificationMobile";
 import SimilarMobiles from "../components/PDPMobile/SimilarMobiles";
 import MainMobile from "../components/PDPMobile/MainMobile";
+import "../styles/pages/PDPMobile.scss";
 
 function PDPMobile() {
   const { id } = useParams<{ id: string }>();
@@ -65,14 +66,14 @@ function PDPMobile() {
 
   return (
     <>
-      <div onClick={handleBack}>
+      <div className="back" onClick={handleBack}>
         <Icon name="Back" />
         <p>BACK</p>
       </div>
 
       {mobileInfo && (
         <MainMobile
-          brand={mobileInfo.brand}
+          name={mobileInfo.name}
           basePrice={mobileInfo.basePrice}
           storageOptions={mobileInfo.storageOptions}
           colorOptions={mobileInfo.colorOptions}

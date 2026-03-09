@@ -42,7 +42,7 @@ export interface MobileInfoStorageOption {
 }
 
 export interface MobileCart {
-  brand: string;
+  name: string;
   color: string;
   capacity: string;
   price: number;
