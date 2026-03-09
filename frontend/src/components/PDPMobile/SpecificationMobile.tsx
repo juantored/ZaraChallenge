@@ -16,10 +16,10 @@ function SpecificationMobile({
 }: SpecificationMobilesProps) {
   return (
     <>
-      <section>
-        <h2></h2>
+      <div className="specificationMobile">
+        <p className="specification">SPECIFICATION</p>
 
-        <table>
+        <table className="tableSpecification">
           <tbody>
             <SpecificationRow title="BRAND" value={brand} />
             <SpecificationRow title="NAME" value={name} />
@@ -41,7 +41,7 @@ function SpecificationMobile({
             />
           </tbody>
         </table>
-      </section>
+      </div>
     </>
   );
 }

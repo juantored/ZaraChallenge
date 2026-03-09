@@ -15,15 +15,17 @@ function SimilarMobiles({ similarMobiles }: SimilarMobilesProps) {
 
   return (
     <>
-      <div>
-        <h3>SIMILAR ITEMS</h3>
-        {similarMobiles.map((mobile) => (
-          <CardMobile
-            key={mobile.id}
-            mobile={mobile}
-            onClick={handleCardMobileClick}
-          ></CardMobile>
-        ))}
+      <div className="sectionSimilar">
+        <p className="similar">SIMILAR ITEMS</p>
+        <div className="similarMobiles">
+          {similarMobiles.map((mobile) => (
+            <CardMobile
+              key={mobile.id}
+              mobile={mobile}
+              onClick={handleCardMobileClick}
+            ></CardMobile>
+          ))}
+        </div>
       </div>
     </>
   );

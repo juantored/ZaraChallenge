@@ -5,6 +5,7 @@ import type { Mobile } from "../types/Mobile";
 import InfiniteScroll from "react-infinite-scroll-component";
 import CardMobile from "../components/CardMobile";
 import SearchBar from "../components/SearchBar";
+import "../styles/pages/ListMobile.scss";
 
 function ListMobiles() {
   // Control para navegar
@@ -86,9 +87,9 @@ function ListMobiles() {
 
   return (
     <>
-      <div style={{ padding: "12px 0" }}>
+      <div className="searchMobile">
         <SearchBar value={search} onChange={setSearch} />
-        <p>{listMobiles.length} Results</p>
+        <p>{listMobiles.length} RESULTS</p>
       </div>
 
       <InfiniteScroll
@@ -97,13 +98,15 @@ function ListMobiles() {
         hasMore={hasMore}
         loader={<h1>Cargando...</h1>}
       >
-        {listMobiles.map((mobile) => (
-          <CardMobile
-            key={mobile.id}
-            mobile={mobile}
-            onClick={handleCardMobileClick}
-          ></CardMobile>
-        ))}
+        <div className="container-grid">
+          {listMobiles.map((mobile) => (
+            <CardMobile
+              key={mobile.id}
+              mobile={mobile}
+              onClick={handleCardMobileClick}
+            ></CardMobile>
+          ))}
+        </div>
       </InfiniteScroll>
     </>
   );

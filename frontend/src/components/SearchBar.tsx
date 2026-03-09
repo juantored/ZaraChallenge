@@ -34,7 +34,7 @@ function SearchBar({ value, onChange, delay = 300 }: SearchBarProps) {
   }, [search, delay, onChange]);
 
   return (
-    <div style={{ position: "relative", width: "100%" }}>
+    <div className="searchBar">
       <input
         type="text"
         placeholder="Search for a smartphone..."
@@ -42,35 +42,11 @@ function SearchBar({ value, onChange, delay = 300 }: SearchBarProps) {
         onChange={handleChange}
         onFocus={handleFocus}
         onBlur={handleBlur}
-        style={{
-          width: "100%",
-          padding: "8px 32px 8px 8px",
-          fontSize: 16,
-          borderRadius: 4,
-          border: "1px solid #ccc",
-          boxSizing: "border-box",
-        }}
       />
 
       {/* Botón de limpiar */}
       {value && !isFocused && (
-        <button
-          onClick={handleClear}
-          style={{
-            position: "absolute",
-            right: 8,
-            top: "50%",
-            transform: "translateY(-50%)",
-            border: "none",
-            background: "transparent",
-            cursor: "pointer",
-            fontSize: 16,
-            color: "#999",
-            padding: 0,
-            lineHeight: 1,
-          }}
-          aria-label="Clear search"
-        >
+        <button onClick={handleClear} aria-label="Clear search">
           ×
         </button>
       )}

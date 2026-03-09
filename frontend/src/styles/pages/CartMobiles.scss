@@ -1,0 +1,235 @@
+@use '../variables' as v;
+
+.sectionCart {
+  // min-width: 100dvh;
+
+  .cartNumber {
+    font-size: 2.5dvh;
+  }
+
+  .mobiles {
+    display: flex;  
+    flex-direction: column;
+    margin-bottom: 13dvh;
+    
+    .cart {
+      display: flex;  
+      justify-content: flex-start;
+      flex-direction: row;    
+      margin-bottom: 2dvh;
+
+      .cartImage {
+        img{
+          height: 25dvh;
+        }
+      }
+
+      .cartInfo {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-top: 3dvh;
+        margin-bottom: 3dvh;
+        
+        .name, 
+        .capacity, 
+        .price {
+          margin: 0;
+          font-size: 2dvh;
+        }
+
+        .price {
+          margin-top: 1dvh;
+        }
+
+        .cartButton {
+          button {
+            font-size: 2dvh;
+            color: red;
+            background: none;
+            border: none;
+          }        
+        }
+      }
+    }
+  }
+
+  .cartBotton {
+    position: fixed;
+    bottom: 0;    
+    width: 100%;
+    height: 8dvh;
+    background: v.$white;    
+    z-index: 1000;         
+    padding-bottom: 2dvh;
+  }
+
+}
+
+/* -------- Mobile -------- */
+@media (max-width: 480px) {
+  
+  .sectionCart {
+    .cartBotton {
+      display: flex;
+      flex-direction: column;                     
+      font-size: 1.8dvh;      
+      padding-bottom: 4dvh;
+
+      .totalPay {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-right: 8dvh;         
+      }
+
+      .botones {
+        display: flex;
+        flex-direction: row;                
+        margin-right: 8dvh;
+        justify-content: space-between;        
+
+        .shopping {
+          width: 100%;
+          .pay {  
+            width: 100%; 
+            height: 5dvh;                
+            margin-left: 2dvh;          
+            background-color: v.$black;
+            color: v.$white;
+            font-size: 1.8dvh;
+            padding-top: 1dvh;
+            padding-bottom: 1dvh;
+            box-shadow: none;
+          }
+        }
+
+        .back {
+          width: 100%;
+
+          .continue {                        
+            height: 5dvh;                   
+            background-color: v.$white;          
+            border: 1px solid black;
+            padding-top: 1dvh;
+            padding-bottom: 1dvh;  
+            font-size: 1.8dvh;  
+            box-shadow: none;                
+          }
+        }
+        
+
+      }
+    }
+  }
+
+}
+
+/* -------- Tablet -------- */
+@media (min-width: 481px) and (max-width: 1024px) {
+  
+  .sectionCart {
+    .cartBotton {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      flex: 0 0 1;
+      align-items: center;
+      font-size: 1.8dvh;
+
+      .shopping {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-right: 8dvh;        
+
+        .totalPay {
+          display: flex;
+          flex-direction: row;
+          gap: 8px;
+        }
+
+        .pay {   
+          height: 5dvh;               
+          margin-left: 2dvh;
+          width: 20dvh;
+          background-color: v.$black;
+          color: v.$white;
+          font-size: 1.6dvh;
+          padding-top: 1dvh;
+          padding-bottom: 1dvh;
+          box-shadow: none;
+        }
+
+      }
+
+      .continue {  
+        height: 5dvh;       
+        background-color: v.$white;
+        width: 20dvh;
+        border: 1px solid black;
+        padding-top: 1dvh;
+        padding-bottom: 1dvh;  
+        font-size: 1.6dvh;  
+        box-shadow: none;                
+      }
+
+    }
+  }
+
+
+}
+
+/* -------- Desktop -------- */
+@media (min-width: 1025px) {
+  .sectionCart {
+    .cartBotton {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      flex: 0 0 1;
+      align-items: center;
+      font-size: 1.8dvh;
+
+      .shopping {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-right: 16dvh;
+
+        .totalPay {
+          display: flex;
+          flex-direction: row;
+          gap: 8px;
+        }
+
+        .pay {   
+          height: 5dvh;               
+          margin-left: 2dvh;
+          width: 25dvh;
+          background-color: v.$black;
+          color: v.$white;
+          padding-top: 1dvh;
+          padding-bottom: 1dvh;
+          font-size: 1.8dvh;
+          box-shadow: none;
+        }
+
+      }
+
+      .continue {  
+        height: 5dvh;       
+        background-color: v.$white;
+        width: 25dvh;
+        border: 1px solid black;
+        padding-top: 1dvh;
+        padding-bottom: 1dvh; 
+        font-size: 1.8dvh;     
+        box-shadow: none;               
+      }
+
+    }
+  }
+
+}

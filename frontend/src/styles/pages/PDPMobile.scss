@@ -1,0 +1,274 @@
+@use '../variables' as v;
+
+.back {
+  position: sticky;
+  top: 8dvh;
+  z-index: 1000;
+  background-color: v.$white;
+  
+  display: flex;
+  align-items: center;
+  gap: 0.5dvh;
+  cursor: pointer;
+  font-size: 2dvh;
+
+  svg {
+    height: 4dvh;
+  }
+
+}
+
+.mainMobile {
+  display: flex;  
+  justify-content: space-around;
+
+  .imageMobile {
+    img {
+      height: 50dvh;
+    }    
+  }
+
+  .configurationMobile {
+    display: flex;
+    flex-direction: column;    
+
+    .sectionInfoMobile {      
+      .name {
+        margin: 0;
+        font-size: 5dvh;
+      }
+      .price {
+        margin: 0;
+        font-size: 2.5dvh;
+      }
+    }
+
+    .sectionStorage {
+      .questionStorage {
+        font-size: 2dvh;
+      }
+
+      .capacity {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        align-content: center;
+
+
+
+        .storageMobile {
+          box-sizing: border-box;    
+          flex: 0 0 clamp(2dvh, calc(100% / 4), 100%);      
+
+          border: 1px solid v.$borderCardMobile;          
+
+          font-size: 2dvh;
+          padding-top: 2dvh;
+          padding-bottom: 2dvh;          
+
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+
+          &:active {
+            border: 1px solid v.$black;   
+          }
+
+        }
+
+        .active {
+          border: 1px solid v.$black;   
+        }
+        
+      }
+    }
+
+    .sectionColor {
+      .questionColor {
+        font-size: 2dvh;
+      }
+
+      .color {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        align-content: center;
+
+        gap: 0.5dvh;
+
+        .colorCard {
+          box-sizing: border-box;    
+          flex: 0 0 clamp(1dvh, calc(100% / 10), 100%);      
+
+          border: 1px solid v.$borderCardMobile;          
+
+          font-size: 2dvh;
+          padding-top: 2dvh;
+          padding-bottom: 2dvh;          
+
+          height: 1dvh;
+          width: 1dvh;
+
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+
+          div {
+            height: 3dvh;
+            width: 3dvh;
+          }
+
+          &:active {
+            border: 1px solid v.$black;   
+          }
+
+        }
+      .active {
+          border: 1px solid v.$black;   
+        }
+
+      }
+    }
+
+    button {
+      padding-top: 1.5dvh;
+      padding-bottom: 1.5dvh;
+      background-color: v.$black;
+      color: v.$white;
+      font-size: 1.5dvh;
+      border: 0px;
+
+      &:disabled {
+        background-color: v.$borderCardMobile;
+      }
+
+    }
+
+  }
+
+}
+
+.specificationMobile {
+  margin-top: 10dvh;
+
+  .specification {
+    font-size: 2.5dvh;
+  }
+
+  .tableSpecification {
+    width: 100%;
+    border-collapse: collapse; 
+
+    tr {
+      border-top: 1px solid v.$black;
+
+      &:last-child {
+        border-bottom: 1px solid v.$black;
+      }
+
+    }
+
+    td {
+      padding-top: 1dvh;
+      padding-bottom: 1dvh;      
+      font-size: 2dvh;
+
+      &:first-child {
+        width: 30dvh;
+      }
+    }
+  }
+
+}
+
+.sectionSimilar {
+  margin-top: 10dvh;
+  margin-bottom: 10dvh;
+
+  .similar {
+    font-size: 2.5dvh;
+  }
+
+  .similarMobiles {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    overflow-x: auto;
+
+    // flex-wrap: wrap;
+    align-items: flex-start;
+    align-content: flex-start;
+
+    .cardMobile {
+      &:first-child {
+        border-left: 1px solid v.$borderCardMobile;
+      }
+    }
+
+  }
+
+}
+
+
+/* -------- Mobile -------- */
+@media (max-width: 480px) {
+  .mainMobile {
+    flex-direction: column;
+  }
+
+  .specificationMobile {
+    .tableSpecification {
+      td {        
+        &:first-child {
+          width: 20dvh;
+        }
+      }
+    }
+  }
+
+}
+
+/* -------- Tablet -------- */
+@media (min-width: 481px) and (max-width: 1024px) {
+  .mainMobile {
+    .imageMobile {
+      img {
+        height: 30dvh;
+      }
+    }
+    
+    .configurationMobile {   
+      .sectionInfoMobile {      
+        .name {
+          margin: 0;
+          font-size: 3dvh;
+        }
+        .price {
+          margin: 0;
+          font-size: 2dvh;
+        }
+      }
+
+      .sectionStorage {
+        .questionStorage {
+          font-size: 1.7dvh;
+        }
+      }
+
+      .sectionColor {
+        .questionColor {
+          font-size: 2dvh;
+        }       
+      }  
+    }
+  }
+}
+
+/* -------- Desktop -------- */
+@media (min-width: 1025px) {
+  
+}

@@ -6,6 +6,7 @@ import App from "./App.tsx";
 import ListMobiles from "./pages/ListMobiles.tsx";
 import PDPMobile from "./pages/PDPMobile.tsx";
 import CartMobile from "./pages/CartMobiles.tsx";
+import "./styles/main.scss";
 
 const router = createBrowserRouter([
   {

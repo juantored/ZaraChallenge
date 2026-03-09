@@ -7,27 +7,24 @@ type CardMobileProps = {
 
 function CardMobile({ mobile, onClick }: CardMobileProps) {
   return (
-    <div
-      onClick={() => onClick?.(mobile.id)}
-      // efecto visual al hover opcional
-      onMouseEnter={(e) =>
-        onClick && (e.currentTarget.style.transform = "scale(1.02)")
-      }
-      onMouseLeave={(e) =>
-        onClick && (e.currentTarget.style.transform = "scale(1)")
-      }
-    >
+    <div className="cardMobile" onClick={() => onClick?.(mobile.id)}>
       {/* Imagen del móvil */}
-      <img src={mobile.imageUrl} alt={mobile.name} />
+      <div className="imageMobile">
+        <img src={mobile.imageUrl} alt={mobile.name} />
+      </div>
 
-      {/* Marca */}
-      <p>{mobile.brand}</p>
-
-      {/* Nombre */}
-      <h3>{mobile.name}</h3>
-
-      {/* Precio */}
-      <p>{mobile.basePrice} EUR</p>
+      <div className="descriptionMobile">
+        <div className="typeMobile">
+          {/* Marca */}
+          <p className="brand">{mobile.brand}</p>
+          {/* Nombre */}
+          <p className="name">{mobile.name}</p>
+        </div>
+        <div className="price">
+          {/* Precio */}
+          <p>{mobile.basePrice} EUR</p>
+        </div>
+      </div>
     </div>
   );
 }

@@ -15,6 +15,8 @@ In the FrontEnd, apart from the basic libraries of **react** and **react-dom**, 
 
 - **react-infinite-scroll-component**: Component that implements infinite scrolling, automatically loading more content when the user reaches the bottom of the page.
 
+- **react-responsive**: Library that allows you to create responsive designs directly from your components.
+
 In the Backend, apart from the core **Node.js** runtime, this application uses the following dependencies:
 
 - **express**: Framework for building API, providing routing, middleware support, and HTTP utilities.
