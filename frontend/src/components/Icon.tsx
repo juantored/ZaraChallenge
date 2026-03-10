@@ -2,12 +2,14 @@
 import Logo from "../assets/logo.svg?react";
 import Bag from "../assets/bag.svg?react";
 import Back from "../assets/back.svg?react";
+import BagFull from "../assets/bagFull.svg?react";
 import type { SVGProps } from "react";
 
 // Creamos un objeto con todos los svg que queremos que se importen
 const Icons = {
   Logo: Logo,
   Bag: Bag,
+  BagFull: BagFull,
   Back: Back,
 };
 

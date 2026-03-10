@@ -22,7 +22,7 @@ function Header() {
         <div className="bag">
           {hideBag && (
             <Link to="/cart">
-              <Icon name="Bag" />
+              {cart.length == 0 ? <Icon name="Bag" /> : <Icon name="BagFull" />}
               <p>{cart.length}</p>
             </Link>
           )}

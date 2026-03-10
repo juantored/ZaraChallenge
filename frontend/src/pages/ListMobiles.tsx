@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { getListMobiles } from "../api/service";
 import type { Mobile } from "../types/Mobile";
 import InfiniteScroll from "react-infinite-scroll-component";
+import { useError } from "../context/ErrorContext";
 import CardMobile from "../components/CardMobile";
 import SearchBar from "../components/SearchBar";
 import "../styles/pages/ListMobile.scss";
@@ -11,6 +12,9 @@ function ListMobiles() {
   // Control para navegar
   const navigate = useNavigate();
   const limit = 20;
+
+  // Context para mostrar errores
+  const { showError } = useError();
 
   const [listMobiles, setListMobiles] = useState<Mobile[]>([]);
   const [offset, setOffset] = useState(0);
@@ -68,7 +72,9 @@ function ListMobiles() {
       const newOffset = multipleOfLimitLength;
       setOffset(newOffset);
     } catch (err: any) {
-      console.log(err);
+      showError(
+        "Error to get mobiles, if the error persists, contact the administrator.",
+      );
       setHasMore(false);
     } finally {
       // Al finalizar indicamos que ya se puede volver a lanzar otra peticion
