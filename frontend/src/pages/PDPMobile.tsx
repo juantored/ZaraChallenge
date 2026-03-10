@@ -6,11 +6,15 @@ import Icon from "../components/Icon";
 import SpecificationMobile from "../components/PDPMobile/SpecificationMobile";
 import SimilarMobiles from "../components/PDPMobile/SimilarMobiles";
 import MainMobile from "../components/PDPMobile/MainMobile";
+import { useError } from "../context/ErrorContext";
 import "../styles/pages/PDPMobile.scss";
 
 function PDPMobile() {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
+
+  // Context para mostrar errores
+  const { showError } = useError();
 
   const [mobileInfo, setMobileInfo] = useState<MobileInfo | null>(null);
   const [loading, setLoading] = useState(false);
@@ -49,7 +53,9 @@ function PDPMobile() {
 
       setMobileInfo(response);
     } catch (err) {
-      console.log(err);
+      showError(
+        "Error to get info of mobile, if the error persists, contact the administrator.",
+      );
     } finally {
       // Al finalizar indicamos que ya se puede volver a lanzar otra peticion
       setLoading(false);
